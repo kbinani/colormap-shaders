@@ -1,5 +1,5 @@
 float colormap_f(float x) {
-    return int((-9.93427e0 * x + 1.56301e1) * x + 2.44663e2 * x) / 255.0;
+    return ((-9.93427e0 * x + 1.56301e1) * x + 2.44663e2 * x) / 255.0;
 }
 
 float colormap_blue(float x) {
