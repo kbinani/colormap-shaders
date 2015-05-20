@@ -2,7 +2,7 @@
 
 A collection of GLSL fragment shaders to draw color map like this:
 
-![rainbow](sample/rainbow.png).
+![rainbow](sample/transform_rainbow.png).
 
 # usage
 
@@ -27,7 +27,7 @@ This shader emulates `gnuplot`'s `rgbformulae`, and the signature of `colormap` 
 vec4 colormap(float x, int red_type, int green_type, int blue_type);
 ```
 
-It takes additional 3 arguments, with same meanings to `rgbformulae`'s 3 argument respectively.
+It takes additional 3 arguments, with same meanings to `rgbformulae`'s 3 arguments respectively.
 
 # samples
 
