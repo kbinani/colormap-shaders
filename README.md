@@ -18,9 +18,9 @@ void main() {
 /* include "shaders/rainbow.frag" here, for example. */
 ```
 
-# special case
+## special case
 
-## gnuplot.frag
+### gnuplot.frag
 
 This shader emulates `gnuplot`'s `rgbformulae`, and the signature of `colormap` is:
 ```
@@ -28,6 +28,35 @@ vec4 colormap(float x, int red_type, int green_type, int blue_type);
 ```
 
 It takes additional 3 arguments, with same meanings to `rgbformulae`'s 3 arguments respectively.
+
+# usage from c++
+
+```c++
+#include <colormap/colormap.h>
+#include <iostream>
+
+int main()
+{
+    using namespace colormap;
+
+    // Print RGB table of MATLAB::Jet colormap.
+    MATLAB::Jet jet;
+    std::cout << "category: " << jet.getCategory() << std::endl;
+    std::cout << "title:    " << jet.getTitle() << std::endl;
+    int const size = 256;
+    for (int i = 0; i < size; ++i) {
+        float const x = i / (float)size;
+        Colormap::Color c = jet.getColor(x);
+        std::cout << x << "\t" << c.r << "\t" << c.g << "\t" << c.b << std::endl;
+    }
+
+    // Dump category and title of all colormaps.
+    for (std::shared_ptr<Colormap const> const& c : ColormapProvider::getInstance()) {
+        std::cout << c->getCategory() << " : " << c->getTitle() << std::endl;
+    }
+    return 0;
+}
+```
 
 # samples
 
