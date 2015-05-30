@@ -1,3 +1,7 @@
+/**
+ * This file was automatically created with "create_c++_header.sh".
+ * Do not edit manually.
+ */
 list_.push_back(std::make_shared<colormap::MATLAB::Autumn>());
 list_.push_back(std::make_shared<colormap::MATLAB::Bone>());
 list_.push_back(std::make_shared<colormap::MATLAB::Cool>());

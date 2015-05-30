@@ -1,3 +1,7 @@
+/**
+ * This file was automatically created with "create_c++_header.sh".
+ * Do not edit manually.
+ */
 #include "./MATLAB/autumn.h"
 #include "./MATLAB/bone.h"
 #include "./MATLAB/cool.h"

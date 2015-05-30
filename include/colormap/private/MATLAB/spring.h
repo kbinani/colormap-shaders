@@ -1,3 +1,7 @@
+/**
+ * This file was automatically created with "create_c++_header.sh".
+ * Do not edit manually.
+ */
 #pragma once
 #include "../../colormap.h"
 
@@ -21,10 +25,10 @@ public:
 		Wrapper w;
 		vec4 c = w.colormap(x);
 		Color result;
-		result.r = c.r;
-		result.g = c.g;
-		result.b = c.b;
-		result.a = c.a;
+		result.r = std::max(0.0f, std::min(1.0f, c.r));
+		result.g = std::max(0.0f, std::min(1.0f, c.g));
+		result.b = std::max(0.0f, std::min(1.0f, c.b));
+		result.a = std::max(0.0f, std::min(1.0f, c.a));
 		return result;
 	}
 
