@@ -46,12 +46,12 @@ int main()
     int const size = 256;
     for (int i = 0; i < size; ++i) {
         float const x = i / (float)size;
-        Colormap::Color c = jet.getColor(x);
+        Color c = jet.getColor(x);
         std::cout << x << "\t" << c.r << "\t" << c.g << "\t" << c.b << std::endl;
     }
 
     // Dump category and title of all colormaps.
-    for (std::shared_ptr<Colormap const> const& c : ColormapProvider::getInstance()) {
+    for (std::shared_ptr<Colormap const> const& c : ColormapList::getSharedList()) {
         std::cout << c->getCategory() << " : " << c->getTitle() << std::endl;
     }
     return 0;

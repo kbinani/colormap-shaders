@@ -7,14 +7,13 @@
 namespace colormap
 {
 
+struct Color
+{
+	float r, g, b, a;
+};
+
 class Colormap
 {
-public:
-	struct Color
-	{
-		float r, g, b, a;
-	};
-
 public:
 	virtual ~Colormap()
 	{}
@@ -160,16 +159,16 @@ protected:
 
 namespace colormap
 {
-class ColormapProvider
+class ColormapList
 {
 private:
 	typedef std::shared_ptr<Colormap const> element_t;
 	typedef std::vector<element_t> container_t;
 
 public:
-	static ColormapProvider const& getInstance()
+	static ColormapList const& getSharedList()
 	{
-		static ColormapProvider instance;
+		static ColormapList instance;
 		return instance;
 	}
 
@@ -209,15 +208,15 @@ public:
 	}
 
 private:
-	ColormapProvider()
+	ColormapList()
 	{
 #include "./private/init_colormap_list.inc"
 	}
 
-	ColormapProvider(ColormapProvider const&) = delete;
-	ColormapProvider(ColormapProvider&&) = delete;
-	ColormapProvider& operator=(ColormapProvider const&) = delete;
-	ColormapProvider& operator=(ColormapProvider&&) = delete;
+	ColormapList(ColormapList const&) = delete;
+	ColormapList(ColormapList&&) = delete;
+	ColormapList& operator=(ColormapList const&) = delete;
+	ColormapList& operator=(ColormapList&&) = delete;
 
 private:
 	container_t list_;
