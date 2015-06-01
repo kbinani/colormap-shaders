@@ -41,6 +41,16 @@ public:
 	{
 		return std::string("MATLAB");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+			"vec4 colormap(float x) {\n"
+			"    float g = clamp(x, 0.0, 1.0);\n"
+			"    return vec4(1.0, g, 0.0, 1.0);\n"
+			"}\n"
+		);
+	}
 };
 
 } // namespace MATLAB

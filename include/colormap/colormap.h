@@ -24,6 +24,8 @@ public:
 
 	virtual std::string getCategory() const = 0;
 
+	virtual std::string getSource() const = 0;
+
 protected:
 	struct vec4
 	{

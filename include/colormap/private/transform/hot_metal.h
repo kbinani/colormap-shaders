@@ -41,6 +41,39 @@ public:
 	{
 		return std::string("transform");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+			"float colormap_blue(float x) {\n"
+			"    return 0.0;\n"
+			"}\n"
+			"\n"
+			"float colormap_green(float x) {\n"
+			"    if (x < 0.6) {\n"
+			"        return 0.0;\n"
+			"    } else if (x <= 0.95) {\n"
+			"        return ((x - 0.6) * 728.57) / 255.0;\n"
+			"    } else {\n"
+			"        return 1.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"float colormap_red(float x) {\n"
+			"    if (x < 0.0) {\n"
+			"        return 0.0;\n"
+			"    } else if (x <= 0.57147) {\n"
+			"        return 446.22 * x / 255.0;\n"
+			"    } else {\n"
+			"       return 1.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"vec4 colormap(float x) {\n"
+			"    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);\n"
+			"}\n"
+		);
+	}
 };
 
 } // namespace transform

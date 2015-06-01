@@ -41,6 +41,57 @@ public:
 	{
 		return std::string("transform");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+			"float colormap_red(float x) {\n"
+			"    if (x < 0.0) {\n"
+			"        return 0.0;\n"
+			"    } else if (x <= 1.0) {\n"
+			"        float xx = 270.9 * x + 0.7703;\n"
+			"        if (xx > 255.0) {\n"
+			"            return (510.0 - xx) / 266.0;\n"
+			"        } else {\n"
+			"            return xx / 255.0;\n"
+			"        }\n"
+			"    } else {\n"
+			"        return 239.0 / 255.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"float colormap_green(float x) {\n"
+			"    if (x < 0.0) {\n"
+			"        return 124.0 / 255.0;\n"
+			"    } else if (x <= 1.0) {\n"
+			"        float xx = 180.0 * sin(x * 3.97 + 9.46) + 131.0;\n"
+			"        if (xx < 0.0) {\n"
+			"            return abs(xx) / 255.0;\n"
+			"        } else if (xx > 255.0) {\n"
+			"            return (510.0 - xx) / 255.0;\n"
+			"        } else {\n"
+			"            return xx / 255.0;\n"
+			"        }\n"
+			"    } else {\n"
+			"        return 242.0 / 255.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"float colormap_blue(float x) {\n"
+			"    if (x < 0.0) {\n"
+			"        return 78.0 / 255.0;\n"
+			"    } else if (x <= 1.0e0) {\n"
+			"        return (95.0 * sin((x - 0.041) * 7.46) + 106.9) / 255.0;\n"
+			"    } else {\n"
+			"        return 179.0 / 255.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"vec4 colormap(float x) {\n"
+			"    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);\n"
+			"}\n"
+		);
+	}
 };
 
 } // namespace transform

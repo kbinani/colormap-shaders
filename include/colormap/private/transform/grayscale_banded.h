@@ -41,6 +41,20 @@ public:
 	{
 		return std::string("transform");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+			"vec4 colormap(float x) {\n"
+			"    float v = cos(133.0 * x) * 28.0 + 230.0 * x + 27.0;\n"
+			"    if (v > 255.0) {\n"
+			"        v = 510.0 - v;\n"
+			"    }\n"
+			"    v = v / 255.0;\n"
+			"    return vec4(v, v, v, 1.0);\n"
+			"}\n"
+		);
+	}
 };
 
 } // namespace transform

@@ -41,6 +41,44 @@ public:
 	{
 		return std::string("MATLAB");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+			"float colormap_red(float x) {\n"
+			"    if (x < 0.75) {\n"
+			"        return 8.0 / 9.0 * x - (13.0 + 8.0 / 9.0) / 1000.0;\n"
+			"    } else {\n"
+			"        return (13.0 + 8.0 / 9.0) / 10.0 * x - (3.0 + 8.0 / 9.0) / 10.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"float colormap_green(float x) {\n"
+			"    if (x <= 0.375) {\n"
+			"        return 8.0 / 9.0 * x - (13.0 + 8.0 / 9.0) / 1000.0;\n"
+			"    } else if (x <= 0.75) {\n"
+			"        return (1.0 + 2.0 / 9.0) * x - (13.0 + 8.0 / 9.0) / 100.0;\n"
+			"    } else {\n"
+			"        return 8.0 / 9.0 * x + 1.0 / 9.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"float colormap_blue(float x) {\n"
+			"    if (x <= 0.375) {\n"
+			"        return (1.0 + 2.0 / 9.0) * x - (13.0 + 8.0 / 9.0) / 1000.0;\n"
+			"    } else {\n"
+			"        return 8.0 / 9.0 * x + 1.0 / 9.0;\n"
+			"    }\n"
+			"}\n"
+			"\n"
+			"vec4 colormap(float x) {\n"
+			"    float r = clamp(colormap_red(x), 0.0, 1.0);\n"
+			"    float g = clamp(colormap_green(x), 0.0, 1.0);\n"
+			"    float b = clamp(colormap_blue(x), 0.0, 1.0);\n"
+			"    return vec4(r, g, b, 1.0);\n"
+			"}\n"
+		);
+	}
 };
 
 } // namespace MATLAB

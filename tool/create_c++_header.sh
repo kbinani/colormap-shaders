@@ -32,7 +32,7 @@ DIR="$(cd "$(dirname "$0")"; pwd)"
 		mkdir -p "$DIR/../include/colormap/private/$CATEGORY"
 		HEADER_FILE="$DIR/../include/colormap/private/${CATEGORY}/${NAME}.h"
 		(
-			echo_header > $HEADER_FILE
+			echo_header
 			cat << EOS
 #pragma once
 #include "../../colormap.h"
@@ -73,12 +73,21 @@ public:
 	{
 		return std::string("${CATEGORY}");
 	}
+
+	std::string getSource() const override
+	{
+		return std::string(
+EOS
+			cat "$FILE" | tr -d '\r' | sed 's/^\(.*\)$/			"\1\\n"/g'
+			cat << EOS
+		);
+	}
 };
 
 } // namespace ${CATEGORY}
 } // namespace colormap
 EOS
-		) >> $HEADER_FILE
+		) > $HEADER_FILE
 
 		echo "#include \"./${CATEGORY}/${NAME}.h\"" >> $ALL_COLORMAPS_FILE
 		echo "list_.push_back(std::make_shared<colormap::${CATEGORY}::${CLASSNAME}>());" >> $INIT_COLORMAP_FILE
