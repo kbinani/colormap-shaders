@@ -1,8 +1,10 @@
 #pragma once
 #include <cassert>
 #include <cmath>
+#include <algorithm>
 #include <vector>
 #include <string>
+#include <memory>
 
 namespace colormap
 {
