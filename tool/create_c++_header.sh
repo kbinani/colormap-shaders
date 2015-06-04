@@ -21,7 +21,7 @@ DIR="$(cd "$(dirname "$0")"; pwd)"
 		CATEGORY=$(echo $FILE | sed 's/^\([^_]*\)_.*$/\1/g')
 		NAME=$(echo $FILE | sed 's/^[^_]*_\(.*\)\.frag$/\1/g')
 		CLASSNAME=
-		for TOKEN in $(echo $NAME | tr '-' ' ' | tr '_' ' '); do
+		for TOKEN in $(echo $NAME | tr '-' ' ' | tr '_' ' ' | tr '+' ' '); do
 			if [ "$TOKEN" = "16" ]; then
 				CLASSNAME="Sixteen"
 			else

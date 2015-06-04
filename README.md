@@ -93,6 +93,47 @@ int main()
 |rgbformulae(33, 13, 10)|![](sample/gnuplot_33_13_10.png)|
 |rgbformulae(34, 35, 36)|![](sample/gnuplot_34_35_36.png)|
 
+## IDL
+
+* http://www.exelisvis.com/ProductsServices/IDL.aspx
+
+|name                         |sample                                     |
+|-----------------------------|-------------------------------------------|
+|IDL\_Black-White\_Linear     |![](sample/IDL_Black-White_Linear.png)     | <!-- #0 -->
+|IDL\_Blue-White\_Linear      |![](sample/IDL_Blue-White_Linear.png)      | <!-- #1 -->
+|IDL\_Red\_Temperature        |![](sample/IDL_Red_Temperature.png)        | <!-- #3 -->
+|IDL\_Blue-Green-Red-Yellow   |![](sample/IDL_Blue-Green-Red-Yellow.png)  | <!-- #4 -->
+|IDL\_Standard\_Gamma-II      |![](sample/IDL_Standard_Gamma-II.png)      | <!-- #5 -->
+|IDL\_Prism                   |![](sample/IDL_Prism.png)                  | <!-- #6 -->
+|IDL\_Red-Purple              |![](sample/IDL_Red-Purple.png)             | <!-- #7 -->
+|IDL\_Green-White\_Linear     |![](sample/IDL_Green-White_Linear.png)     | <!-- #8 -->
+|IDL\_Green-White\_Exponential|![](sample/IDL_Green-White_Exponential.png)| <!-- #9 -->
+|IDL\_Green-Pink              |![](sample/IDL_Green-Pink.png)             | <!-- #10 -->
+|IDL\_Blue-Red                |![](sample/IDL_Blue-Red.png)               | <!-- #11 -->
+|IDL\_16\_Level               |![](sample/IDL_16_Level.png)               | <!-- #12 -->
+|IDL\_Rainbow                 |![](sample/IDL_Rainbow.png)                | <!-- #13 -->
+|IDL\_Steps                   |![](sample/IDL_Steps.png)                  | <!-- #14 -->
+|IDL\_Stern\_Special          |![](sample/IDL_Stern_Special.png)          | <!-- #15 -->
+|IDL\_Haze                    |![](sample/IDL_Haze.png)                   | <!-- #16 -->
+|IDL\_Pastels                 |![](sample/IDL_Pastels.png)                | <!-- #18 -->
+|IDL\_Hue\_Sat\_Lightness\_1  |![](sample/IDL_Hue_Sat_Lightness_1.png)    | <!-- #19 -->
+|IDL\_Hue\_Sat\_Lightness\_2  |![](sample/IDL_Hue_Sat_Lightness_2.png)    | <!-- #20 -->
+|IDL\_Hue\_Sat\_Value\_1      |![](sample/IDL_Hue_Sat_Value_1.png)        | <!-- #21 -->
+|IDL\_Hue\_Sat\_Value\_2      |![](sample/IDL_Hue_Sat_Value_2.png)        | <!-- #22 -->
+|IDL\_Purple\-Red\+Stripes    |![](sample/IDL_Purple-Red+Stripes.png)     | <!-- #23 -->
+|IDL\_Beach                   |![](sample/IDL_Beach.png)                  | <!-- #24 -->
+|IDL\_Mac\_Style              |![](sample/IDL_Mac_Style.png)              | <!-- #25 -->
+|IDL\_Eos\_A                  |![](sample/IDL_Eos_A.png)                  | <!-- #26 -->
+|IDL\_Eos\_B                  |![](sample/IDL_Eos_B.png)                  | <!-- #27 -->
+|IDL\_Hardcandy               |![](sample/IDL_Hardcandy.png)              | <!-- #28 -->
+|IDL\_Nature                  |![](sample/IDL_Nature.png)                 | <!-- #29 -->
+|IDL\_Ocean                   |![](sample/IDL_Ocean.png)                  | <!-- #30 -->
+|IDL\_Peppermint              |![](sample/IDL_Peppermint.png)             | <!-- #31 -->
+|IDL\_Plasma                  |![](sample/IDL_Plasma.png)                 | <!-- #32 -->
+|IDL\_Blue-Red\_2             |![](sample/IDL_Blue-Red_2.png)             | <!-- #33 -->
+|IDL\_Rainbow\_2              |![](sample/IDL_Rainbow_2.png)              | <!-- #34 -->
+|IDL\_Blue\_Waves             |![](sample/IDL_Blue_Waves.png)             | <!-- #35 -->
+
 ## transform
 
 * http://web.archive.org/web/20000520021207/http://www.fortner.com/docs/product_transform.html

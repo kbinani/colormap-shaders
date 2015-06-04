@@ -154,6 +154,11 @@ protected:
 		{
 			return std::fabs(v);
 		}
+
+		float mod(float x, float y) const
+		{
+			return std::fmod(x, y);
+		}
 	};
 };
 
@@ -214,7 +219,7 @@ public:
 private:
 	ColormapList()
 	{
-#include "./private/init_colormap_list.inc"
+		#include "./private/init_colormap_list.inc"
 	}
 
 	ColormapList(ColormapList const&) = delete;
