@@ -170,65 +170,23 @@ namespace colormap
 {
 class ColormapList
 {
-private:
-	typedef std::shared_ptr<Colormap const> element_t;
-	typedef std::vector<element_t> container_t;
-
 public:
-	static ColormapList const& getSharedList()
+	static std::vector<std::shared_ptr<Colormap const>> getAll()
 	{
-		static ColormapList instance;
-		return instance;
-	}
-
-	container_t::const_iterator begin() const
-	{
-		return list_.begin();
-	}
-
-	container_t::const_iterator end() const
-	{
-		return list_.end();
-	}
-
-	container_t::const_iterator cbegin() const
-	{
-		return list_.cbegin();
-	}
-
-	container_t::const_iterator cend() const
-	{
-		return list_.cend();
-	}
-
-	element_t const& at(size_t index) const
-	{
-		return list_[index];
-	}
-
-	element_t operator[](size_t index) const
-	{
-		return list_[index];
-	}
-
-	size_t size() const
-	{
-		return list_.size();
+		return {
+			#include "./private/init_colormap_list.inc"
+		};
 	}
 
 private:
 	ColormapList()
 	{
-		#include "./private/init_colormap_list.inc"
 	}
 
 	ColormapList(ColormapList const&) = delete;
 	ColormapList(ColormapList&&) = delete;
 	ColormapList& operator=(ColormapList const&) = delete;
 	ColormapList& operator=(ColormapList&&) = delete;
-
-private:
-	container_t list_;
 };
 
 } // namespace colormap

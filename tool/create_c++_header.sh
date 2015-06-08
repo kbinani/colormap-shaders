@@ -90,6 +90,6 @@ EOS
 		) > $HEADER_FILE
 
 		echo "#include \"./${CATEGORY}/${NAME}.h\"" >> $ALL_COLORMAPS_FILE
-		echo "list_.push_back(std::make_shared<colormap::${CATEGORY}::${CLASSNAME}>());" >> $INIT_COLORMAP_FILE
+		echo "std::make_shared<colormap::${CATEGORY}::${CLASSNAME}>()," >> $INIT_COLORMAP_FILE
 	done
 )
