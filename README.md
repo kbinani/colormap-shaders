@@ -51,7 +51,7 @@ int main()
     }
 
     // Dump category and title of all colormaps.
-    for (std::shared_ptr<Colormap const> const& c : ColormapList::getSharedList()) {
+    for (std::shared_ptr<Colormap const> const& c : ColormapList::getAll()) {
         std::cout << c->getCategory() << " : " << c->getTitle() << std::endl;
     }
     return 0;
