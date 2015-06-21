@@ -11,7 +11,7 @@ namespace colormap
 
 struct Color
 {
-	float r, g, b, a;
+	double r, g, b, a;
 };
 
 class Colormap
@@ -20,7 +20,7 @@ public:
 	virtual ~Colormap()
 	{}
 
-	virtual Color getColor(float x) const = 0;
+	virtual Color getColor(double x) const = 0;
 
 	virtual std::string getTitle() const = 0;
 
@@ -31,7 +31,7 @@ public:
 protected:
 	struct vec4
 	{
-		vec4(float a0, float a1, float a2, float a3)
+		vec4(double a0, double a1, double a2, double a3)
 			: x(a0)
 			, y(a1)
 			, z(a2)
@@ -39,7 +39,7 @@ protected:
 		{
 		}
 
-		float operator[](size_t index) const
+		double operator[](size_t index) const
 		{
 			assert(index < 4);
 			if (index < 2) {
@@ -57,7 +57,7 @@ protected:
 			}
 		}
 
-		float& operator[](size_t index)
+		double& operator[](size_t index)
 		{
 			assert(index < 4);
 			if (index < 2) {
@@ -80,7 +80,7 @@ protected:
 			return x == o.x && y == o.y && z == o.z && w == o.w;
 		}
 
-		vec4 operator*(float v) const
+		vec4 operator*(double v) const
 		{
 			return vec4(r * v, g * v, b * v, a * v);
 		}
@@ -102,20 +102,20 @@ protected:
 		}
 
 		union {
-			float r;
-			float x;
+			double r;
+			double x;
 		};
 		union {
-			float g;
-			float y;
+			double g;
+			double y;
 		};
 		union {
-			float b;
-			float z;
+			double b;
+			double z;
 		};
 		union {
-			float a;
-			float w;
+			double a;
+			double w;
 		};
 	};
 
@@ -126,6 +126,8 @@ protected:
 		{}
 
 	protected:
+		typedef double local_real_t;
+
 		template <class Value, class MinMax>
 		typename std::common_type<Value, MinMax>::type clamp(Value v, MinMax min, MinMax max) const
 		{
@@ -150,12 +152,12 @@ protected:
 			}
 		}
 
-		float abs(float v) const
+		local_real_t abs(local_real_t v) const
 		{
 			return std::fabs(v);
 		}
 
-		float mod(float x, float y) const
+		local_real_t mod(local_real_t x, local_real_t y) const
 		{
 			return std::fmod(x, y);
 		}

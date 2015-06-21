@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.1)
 project(colormap)
 
-set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 
-include_directories(/usr/local/include)
+include_directories(/usr/local/include include)
 
 add_executable(create_samples
 	tool/create_samples.cpp)

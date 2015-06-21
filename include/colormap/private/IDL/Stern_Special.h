@@ -16,19 +16,24 @@ private:
 	class Wrapper : public WrapperBase
 	{
 	public:
+		#ifdef float
+			#error "TODO"
+		#endif
+		#define float local_real_t
 		#include "../../../../shaders/IDL_Stern_Special.frag"
+		#undef float
 	};
 
 public:
-	Color getColor(float x) const override
+	Color getColor(double x) const override
 	{
 		Wrapper w;
 		vec4 c = w.colormap(x);
 		Color result;
-		result.r = std::max(0.0f, std::min(1.0f, c.r));
-		result.g = std::max(0.0f, std::min(1.0f, c.g));
-		result.b = std::max(0.0f, std::min(1.0f, c.b));
-		result.a = std::max(0.0f, std::min(1.0f, c.a));
+		result.r = std::max(0.0, std::min(1.0, c.r));
+		result.g = std::max(0.0, std::min(1.0, c.g));
+		result.b = std::max(0.0, std::min(1.0, c.b));
+		result.a = std::max(0.0, std::min(1.0, c.a));
 		return result;
 	}
 
