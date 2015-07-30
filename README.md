@@ -201,4 +201,4 @@ int main()
 
 # license
 
-The MIT License.
+The MIT License. See 'LICENSE' file for detail.
