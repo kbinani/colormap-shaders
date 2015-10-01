@@ -35,7 +35,7 @@ float colormap_v(float x) {
 }
 
 // H1 - H2 = 0
-// => [x=−0.8359672286003642,x=0.1151580585723306]
+// => [x=-0.8359672286003642,x=0.1151580585723306]
 
 vec4 colormap_hsv2rgb(float h, float s, float v) {
 	float r = v;
@@ -46,8 +46,8 @@ vec4 colormap_hsv2rgb(float h, float s, float v) {
 		int i = int(h);
 		float f = h - float(i);
 		if (i == 1) {
-            r *= 1.0 - s * f;
-            b *= 1.0 - s;
+			r *= 1.0 - s * f;
+			b *= 1.0 - s;
 		} else if (i == 2) {
 			r *= 1.0 - s;
 			b *= 1.0 - s * (1.0 - f);
