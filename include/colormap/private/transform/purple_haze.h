@@ -50,7 +50,7 @@ public:
 	std::string getSource() const override
 	{
 		return std::string(
-			" float colormap_e = exp(1.0);\n"
+			"float colormap_e = exp(1.0);\n"
 			"\n"
 			"float colormap_red(float x) {\n"
 			"    if (x < 0.0) {\n"

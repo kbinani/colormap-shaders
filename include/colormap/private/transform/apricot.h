@@ -50,7 +50,7 @@ public:
 	std::string getSource() const override
 	{
 		return std::string(
-			" float colormap_pi = 3.141592653589793;\n"
+			"float colormap_pi = 3.141592653589793;\n"
 			"\n"
 			"float colormap_f(float x, float c) {\n"
 			"    return abs((((-5.563e-5 * x + 3.331e-16) * x + 3.045e-1) * x + 4.396e-12) * x + c);\n"
