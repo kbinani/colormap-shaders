@@ -17,7 +17,7 @@ DIR="$(cd "$(dirname "$0")"; pwd)"
 	INIT_COLORMAP_FILE="../../include/colormap/private/init_colormap_list.inc"
 	echo_header > $ALL_COLORMAPS_FILE
 	echo_header > $INIT_COLORMAP_FILE
-	for FILE in $(git ls-files | grep '\.frag$' | grep _); do
+	for FILE in $(find . -name '*\.frag' | grep _); do
 		CATEGORY=$(echo $FILE | sed 's/^\([^_]*\)_.*$/\1/g')
 		NAME=$(echo $FILE | sed 's/^[^_]*_\(.*\)\.frag$/\1/g')
 		CLASSNAME=
