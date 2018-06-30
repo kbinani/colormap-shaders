@@ -1,6 +1,6 @@
-# glsl-colormap
+# colormap-shaders
 
-A collection of GLSL fragment shaders to draw color map like this:
+A collection of shaders to draw color map like this:
 
 ![rainbow](sample/transform_rainbow.png).
 
