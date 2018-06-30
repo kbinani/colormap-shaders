@@ -13,6 +13,8 @@ DIR="$(cd "$(dirname "$0")"; pwd)"
 
 (
 	cd "$DIR/../shaders/glsl"
+
+	mkdir -p ../../include/colormap/private
 	ALL_COLORMAPS_FILE="../../include/colormap/private/all_colormaps.h"
 	INIT_COLORMAP_FILE="../../include/colormap/private/init_colormap_list.inc"
 	echo_header > $ALL_COLORMAPS_FILE
