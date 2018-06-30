@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/MATLAB_autumn.frag"
+		#include "../../../../shaders/glsl/MATLAB_autumn.frag"
 		#undef float
 	};
 
