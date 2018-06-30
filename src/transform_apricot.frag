@@ -1,4 +1,4 @@
-float colormap_pi = 3.141592653589793;
+STATIC_CONST float colormap_pi = 3.141592653589793;
 
 float colormap_f(float x, float c) {
     return abs((((-5.563e-5 * x + 3.331e-16) * x + 3.045e-1) * x + 4.396e-12) * x + c);

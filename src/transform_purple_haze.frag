@@ -1,4 +1,4 @@
-float colormap_e = exp(1.0);
+STATIC_CONST float colormap_e = exp(1.0);
 
 float colormap_red(float x) {
     if (x < 0.0) {
