@@ -12,9 +12,9 @@ EOS
 DIR="$(cd "$(dirname "$0")"; pwd)"
 
 (
-	cd "$DIR/../shaders"
-	ALL_COLORMAPS_FILE="../include/colormap/private/all_colormaps.h"
-	INIT_COLORMAP_FILE="../include/colormap/private/init_colormap_list.inc"
+	cd "$DIR/../shaders/glsl"
+	ALL_COLORMAPS_FILE="../../include/colormap/private/all_colormaps.h"
+	INIT_COLORMAP_FILE="../../include/colormap/private/init_colormap_list.inc"
 	echo_header > $ALL_COLORMAPS_FILE
 	echo_header > $INIT_COLORMAP_FILE
 	for FILE in $(git ls-files | grep '\.frag$' | grep _); do
@@ -52,7 +52,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/${FILE}"
+		#include "../../../../shaders/glsl/${FILE}"
 		#undef float
 	};
 

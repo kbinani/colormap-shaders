@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/IDL_CB-PuRd.frag"
+		#include "../../../../shaders/glsl/IDL_CB-PuRd.frag"
 		#undef float
 	};
 

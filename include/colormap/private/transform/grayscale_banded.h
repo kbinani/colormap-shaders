@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/transform_grayscale_banded.frag"
+		#include "../../../../shaders/glsl/transform_grayscale_banded.frag"
 		#undef float
 	};
 

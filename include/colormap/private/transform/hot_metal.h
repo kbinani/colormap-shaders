@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/transform_hot_metal.frag"
+		#include "../../../../shaders/glsl/transform_hot_metal.frag"
 		#undef float
 	};
 

@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/transform_peanut_butter_and_jerry.frag"
+		#include "../../../../shaders/glsl/transform_peanut_butter_and_jerry.frag"
 		#undef float
 	};
 

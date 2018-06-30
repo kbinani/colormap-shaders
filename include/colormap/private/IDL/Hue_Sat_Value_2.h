@@ -20,7 +20,7 @@ private:
 			#error "TODO"
 		#endif
 		#define float local_real_t
-		#include "../../../../shaders/IDL_Hue_Sat_Value_2.frag"
+		#include "../../../../shaders/glsl/IDL_Hue_Sat_Value_2.frag"
 		#undef float
 	};
 
