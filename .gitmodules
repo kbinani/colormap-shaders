@@ -1,3 +1,0 @@
-[submodule "ext/pngpp"]
-	path = ext/pngpp
-	url = https://github.com/usagi/pngpp.git

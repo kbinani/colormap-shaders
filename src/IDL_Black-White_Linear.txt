@@ -1,4 +1,0 @@
-FLOAT4 colormap(float x) {
-	float d = clamp(x, 0.0, 1.0);
-	return FLOAT4(d, d, d, 1.0);
-}
