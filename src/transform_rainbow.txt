@@ -1,4 +1,4 @@
-vec4 colormap(float x) {
+FLOAT4 colormap(float x) {
     float r = 0.0, g = 0.0, b = 0.0;
 
     if (x < 0.0) {
@@ -33,5 +33,5 @@ vec4 colormap(float x) {
         b = 0.0;
     }
 
-    return vec4(r, g, b, 1.0);
+    return FLOAT4(r, g, b, 1.0);
 }

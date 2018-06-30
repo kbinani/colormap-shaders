@@ -21,6 +21,7 @@ NAMESPACE2=$(echo "$FILENAME" | cut -d_ -f2- | cut -d. -f1 | sed 's/-/_/g' | sed
 	cat "$INPUT" \
 		| sed 's/vec4/float4/g' \
 		| sed 's/mod/fmod/g' \
+		| sed 's/FLOAT4/float4/g' \
 		| sed 's/STATIC_CONST/static constant/g'
 
 	echo

@@ -1,4 +1,4 @@
-vec4 colormap_hsv2rgb(float h, float s, float v) {
+FLOAT4 colormap_hsv2rgb(float h, float s, float v) {
 	float r = v;
 	float g = v;
 	float b = v;
@@ -26,14 +26,14 @@ vec4 colormap_hsv2rgb(float h, float s, float v) {
 			b *= 1.0 - s;
 		}
 	}
-	return vec4(r, g, b, 1.0);
+	return FLOAT4(r, g, b, 1.0);
 }
 
-vec4 colormap(float x) {
+FLOAT4 colormap(float x) {
 	if (x < 0.0) {
-		return vec4(0.0, 0.0, 0.0, 1.0);
+		return FLOAT4(0.0, 0.0, 0.0, 1.0);
 	} else if (1.0 < x) {
-		return vec4(1.0, 1.0, 1.0, 1.0);
+		return FLOAT4(1.0, 1.0, 1.0, 1.0);
 	} else {
 		float h = clamp(-9.42274071356572E-01 * x + 8.74326827903982E-01, 0.0, 1.0);
 		float s = 1.0;

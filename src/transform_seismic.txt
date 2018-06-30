@@ -52,6 +52,6 @@ float colormap_blue(float x) {
     }
 }
 
-vec4 colormap(float x) {
-    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
+FLOAT4 colormap(float x) {
+    return FLOAT4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
 }

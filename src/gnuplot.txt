@@ -109,6 +109,6 @@ float colormap_f1(int formula, float x) {
     }
 }
 
-vec4 colormap(float x, int red_type, int green_type, int blue_type) {
-    return vec4(colormap_f1(red_type, x), colormap_f1(green_type, x), colormap_f1(blue_type, x), 1.0);
+FLOAT4 colormap(float x, int red_type, int green_type, int blue_type) {
+    return FLOAT4(colormap_f1(red_type, x), colormap_f1(green_type, x), colormap_f1(blue_type, x), 1.0);
 }

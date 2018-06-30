@@ -8,7 +8,7 @@ float colormap_f1(float x) {
 	}
 }
 
-vec4 colormap(float x) {
+FLOAT4 colormap(float x) {
 	float v = clamp(colormap_f1(x) / 255.0, 0.0, 1.0);
-	return vec4(v, v, v, 1.0);
+	return FLOAT4(v, v, v, 1.0);
 }

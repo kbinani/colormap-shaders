@@ -32,10 +32,10 @@ float colormap_blue(float x) {
     }
 }
 
-vec4 colormap(float x) {
+FLOAT4 colormap(float x) {
     float t = x * 255.0;
     float r = colormap_red(t) / 255.0;
     float g = colormap_green(t) / 255.0;
     float b = colormap_blue(t) / 255.0;
-    return vec4(r, g, b, 1.0);
+    return FLOAT4(r, g, b, 1.0);
 }

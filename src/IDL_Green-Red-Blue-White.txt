@@ -76,9 +76,9 @@ float colormap_blue(float x) {
     return 5.23682489688790E+02 * x - 1.55016347956506E+02;
 }
 
-vec4 colormap(float x) {
+FLOAT4 colormap(float x) {
     float r = clamp(colormap_red(x) / 255.0, 0.0, 1.0);
     float g = clamp(colormap_green(x) / 255.0, 0.0, 1.0);
     float b = clamp(colormap_blue(x) / 255.0, 0.0, 1.0);
-    return vec4(r, g, b, 1.0);
+    return FLOAT4(r, g, b, 1.0);
 }
