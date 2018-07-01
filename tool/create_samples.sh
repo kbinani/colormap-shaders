@@ -15,8 +15,8 @@ function exec {
 		exec cmake --build .
 	)
 
-	echo find ../../shaders/glsl/*.frag | grep -v gnuplot | xargs -I{} -L1 bash -c 'build/create_samples {} ../../samples/$(basename "{}" | cut -d. -f1).png'
-	find ../../shaders/glsl/*.frag | grep -v gnuplot | xargs -I{} -L1 bash -c 'build/create_samples {} ../../samples/$(basename "{}" | cut -d. -f1).png'
+	echo find ../../shaders/glsl/*.frag | grep -v gnuplot | xargs -I{} -L1 -P $(sysctl -n hw.ncpu) bash -c 'build/create_samples {} ../../samples/$(basename "{}" | cut -d. -f1).png'
+	find ../../shaders/glsl/*.frag | grep -v gnuplot | xargs -I{} -L1 -P $(sysctl -n hw.ncpu) bash -c 'build/create_samples {} ../../samples/$(basename "{}" | cut -d. -f1).png'
 
 	for ARGS in 21_22_23 23_28_3 30_31_32 33_13_10 34_35_36 3_11_6 7_5_15; do
 		A0=$(echo $ARGS | cut -f1 -d_)

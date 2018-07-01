@@ -9,9 +9,6 @@ glsl:frag"
 		TYPE=$(echo $SHADER | cut -d: -f1)
 		EXT=$(echo $SHADER | cut -d: -f2)
 		mkdir -p "../shaders/$TYPE"
-		for FILE in $(find . -name '*\.txt'); do
-			NAME=$(basename "$FILE" | cut -d. -f1)
-			bash ../tool/transcode/${TYPE}.sh "$FILE" "../shaders/${TYPE}/${NAME}.${EXT}"
-		done
+		find . -name '*\.txt' | xargs -I{} -L 1 -P $(sysctl -n hw.ncpu) bash -c "../tool/transcode/${TYPE}.sh {} ../shaders/$TYPE/\$(basename {} | cut -d. -f1).${EXT}"
 	done
 )
