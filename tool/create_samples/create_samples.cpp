@@ -1,15 +1,17 @@
-#include "../ext/pngpp/png.hpp"
+#include "pngpp/png.hpp"
 #include <libgen.h>
 #include <GLUT/glut.h>
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 int const width = 256;
 int const height = 16;
 
-std::string inputFile;
+std::string inputFile, outputFile;
+std::vector<float> extraArgs;
 
 static std::string file_get_contents(std::string const& file)
 {
@@ -69,7 +71,14 @@ static void display(void)
     glEnable(GL_TEXTURE_2D);
 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    std::string srcString = file_get_contents(inputFile) + std::string("void main() { gl_FragColor = colormap(gl_TexCoord[0].x); }");
+    std::ostringstream ss;
+    ss << file_get_contents(inputFile);
+    ss << "void main() { gl_FragColor = colormap(gl_TexCoord[0].x";
+    for (float arg : extraArgs) {
+        ss << ", " << arg;
+    }
+    ss << "); }";
+    std::string srcString = ss.str();
     char const* src = srcString.c_str();
     GLint const length = strlen(src) + 1;
 
@@ -124,21 +133,23 @@ static void display(void)
 			pos += 4;
 		}
 	}
-	image.write(get_sample_name(inputFile));
+	image.write(outputFile);
 
     exit(0);
 }
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2) {
+    if (argc < 3) {
         std::cerr << "too few argument" << std::endl;
-        return 1;
-    } else if (argc > 2) {
-        std::cerr << "too many arguments" << std::endl;
         return 1;
     }
     inputFile = argv[1];
+    outputFile = argv[2];
+    for (int i = 3; i < argc; i++) {
+        float arg = std::stof(std::string(argv[i]));
+        extraArgs.push_back(arg);
+    }
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
