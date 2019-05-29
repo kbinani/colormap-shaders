@@ -89,6 +89,7 @@
 #include "./MATLAB/spring.h"
 #include "./MATLAB/summer.h"
 #include "./MATLAB/winter.h"
+#include "./kbinani/altitude.h"
 #include "./transform/apricot.h"
 #include "./transform/carnation.h"
 #include "./transform/ether.h"
