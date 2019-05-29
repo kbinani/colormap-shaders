@@ -24,10 +24,10 @@ function exec {
 	exec git submodule deinit tool/create_samples/ext/pngpp
 	exec git rm -rf tool/create_samples/ext/pngpp
 
-	echo ls -a1 | grep -v include | grep -v shaders | grep -v samples | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
-	ls -a1 | grep -v include | grep -v shaders | grep -v samples | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
+	echo ls -a1 | grep -v include | grep -v shaders | grep -v sample | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
+	ls -a1 | grep -v include | grep -v shaders | grep -v sample | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
 
-	exec git add -A include shaders samples
+	exec git add -A include shaders sample
 	
 	echo git commit -m "Generated: $COMMIT_ID"
 	git commit -m "Generated: $COMMIT_ID"
