@@ -10,6 +10,7 @@ function exec {
 	exec pwd
 	exec mkdir -p ../../sample
 	(
+		exec mkdir -p build
 		exec cd build
 		exec cmake ..
 		exec cmake --build .
