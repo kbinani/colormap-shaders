@@ -126,7 +126,7 @@ protected:
 		{}
 
 	protected:
-		typedef double local_real_t;
+		using local_real_t = double;
 
 		template <class Value, class MinMax>
 		typename std::common_type<Value, MinMax>::type clamp(Value v, MinMax min, MinMax max) const
