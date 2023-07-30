@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ue
+
 function exec {
 	echo -e "\033[2m$@\033[0m"
 	$@
@@ -21,10 +23,11 @@ function exec {
 	BRANCH_NAME=$(date "+%s")
 	exec git checkout --orphan $BRANCH_NAME
 
-	exec git submodule deinit tool/create_samples/ext/pngpp
+	exec git submodule deinit -f tool/create_samples/ext/pngpp
 	exec git rm -rf tool/create_samples/ext/pngpp
+	exec rm -rf tool/create_samples/build
 
-	echo ls -a1 | grep -v include | grep -v shaders | grep -v sample | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
+	echo "ls -a1 | grep -v include | grep -v shaders | grep -v sample | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf"
 	ls -a1 | grep -v include | grep -v shaders | grep -v sample | grep -v '^.$' | grep -v '^..$' | grep -v '^.git$'| xargs git rm -rf
 
 	exec git add -A include shaders sample
