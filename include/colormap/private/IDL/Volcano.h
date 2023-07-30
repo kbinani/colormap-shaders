@@ -16,12 +16,12 @@ private:
 	class Wrapper : public WrapperBase
 	{
 	public:
-	    #pragma GCC diagnostic push
-    	#pragma GCC diagnostic ignored "-Wkeyword-macro"
+		#pragma GCC diagnostic push
+		#pragma GCC diagnostic ignored "-Wkeyword-macro"
 		#define float local_real_t
 		#include "../../../../shaders/glsl/IDL_Volcano.frag"
 		#undef float
-	    #pragma GCC diagnostic pop
+		#pragma GCC diagnostic pop
 	};
 
 public:
