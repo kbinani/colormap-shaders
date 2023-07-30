@@ -16,12 +16,12 @@ private:
 	class Wrapper : public WrapperBase
 	{
 	public:
-		#ifdef float
-			#error "TODO"
-		#endif
+	    #pragma GCC diagnostic push
+    	#pragma GCC diagnostic ignored "-Wkeyword-macro"
 		#define float local_real_t
 		#include "../../../../shaders/glsl/IDL_Hue_Sat_Value_1.frag"
 		#undef float
+	    #pragma GCC diagnostic pop
 	};
 
 public:
