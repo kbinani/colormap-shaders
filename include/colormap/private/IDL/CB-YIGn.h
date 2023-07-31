@@ -16,12 +16,23 @@ private:
 	class Wrapper : public WrapperBase
 	{
 	public:
+		#if defined(__clang__)
+		#pragma clang diagnostic push
+		#pragma clang diagnostic ignored "-Wkeyword-macro"
+		#elif defined(__GNUC__)
 		#pragma GCC diagnostic push
 		#pragma GCC diagnostic ignored "-Wkeyword-macro"
+		#endif
+
 		#define float local_real_t
 		#include "../../../../shaders/glsl/IDL_CB-YIGn.frag"
 		#undef float
+
+		#if defined(__clang__)
+		#pragma clang diagnostic pop
+		#elif defined(__GNUC__)
 		#pragma GCC diagnostic pop
+		#endif
 	};
 
 public:
