@@ -95,7 +95,7 @@ int main()
 
 ## IDL
 
-* http://www.exelisvis.com/ProductsServices/IDL.aspx
+* https://www.nv5geospatialsoftware.com/docs/loadingdefaultcolortables.html
 
 |name                         |sample                                     |
 |-----------------------------|-------------------------------------------|
